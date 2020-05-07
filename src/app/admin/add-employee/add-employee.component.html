@@ -1,0 +1,149 @@
+
+
+
+
+<div class="card" style="width: 50rem;">
+  <div class="card-header">
+    Add Employee
+  </div>
+  <div class="card-body">
+    
+    <form>
+      
+      <div class="form-group">
+        <label>Employee ID</label>
+        <input type="number" [(ngModel)]='employee.empId' [ngModelOptions]="{standalone: true}" placeholder="Enter Employee Id" class="form-control .form-control-sm" id="empId">
+      </div>
+    
+    
+    <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" [(ngModel)]='employee.fname' [ngModelOptions]="{standalone: true}" placeholder="Enter First Name" class="form-control .form-control-sm" id="firstname">
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" [(ngModel)]='employee.lname' [ngModelOptions]="{standalone: true}" placeholder="Enter Last Name" class="form-control .form-control-sm" id="lastname">
+      </div>
+    </div>
+    </div>
+    
+
+     <div class="row">
+      <div class="col">
+      <div class="form-group">
+        <label>Date of Joining</label>
+        <input type="date" [(ngModel)]='employee.doj' [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Joining" class="form-control .form-control-sm" id="doj">
+      </div>
+      </div>
+    
+      <div class="col">
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" [(ngModel)]='employee.dob' [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Birth" class="form-control .form-control-sm" id="dob">
+      </div>
+    </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" [(ngModel)]='employee.department' [ngModelOptions]="{standalone: true}" placeholder="Enter Department" class="form-control .form-control-sm" id="dept">
+      </div>
+      </div>
+    
+
+      <div class="col">
+      <div class="form-group">
+        <label>Grade</label>
+        <select type="text" [(ngModel)]='employee.grade' [ngModelOptions]="{standalone: true}"  placeholder="Enter Grade" class="form-control" id="grade">
+          <option>M1</option>
+          <option>M2</option>
+          <option>M3</option>
+          <option>M4</option>
+          <option>M5</option>
+          <option>M6</option>
+          <option>M7</option>
+        </select>
+
+       
+       
+       </div>
+    </div>
+    </div>
+      
+    <div class="row">
+      <div class="col">
+      <div class="form-group">
+        <label>Designation</label>
+        <input type="text" [(ngModel)]='employee.designation' [ngModelOptions]="{standalone: true}" placeholder="Enter Designation" class="form-control .form-control-sm" id="designation">
+      </div>
+      </div>
+    
+      <div class="col">
+      <div class="form-group">
+        <label>Gender</label>
+        <select type="text" [(ngModel)]='employee.gender' [ngModelOptions]="{standalone: true}" placeholder="Enter Gender" class="form-control" id="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select> 
+
+         
+      </div>
+    </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+      <div class="form-group">
+        <label>Basic Salary</label>
+        <input type="number" [(ngModel)]='employee.salary' [ngModelOptions]="{standalone: true}" placeholder="Enter Salary" class="form-control .form-control-sm" id="salary">
+      </div>
+      </div>
+    
+      <div class="col">
+      <div class="form-group">
+        <label>Marital Status</label>
+        <select type="text" [(ngModel)]='employee.maritalStatus' [ngModelOptions]="{standalone: true}" placeholder="Enter Marital Status" class="form-control" id="maritalStat">
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+          <option>Widowed</option>
+        </select> 
+       
+        
+      </div>
+    </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" [(ngModel)]='employee.address' [ngModelOptions]="{standalone: true}" placeholder="Enter Address" class="form-control .form-control-sm" id="address">
+      </div>
+      </div>
+
+
+    <div class="col">
+      <div class="form-group">
+        <label>Manager ID</label>
+        <input type="number" [(ngModel)]='employee.managerId' [ngModelOptions]="{standalone: true}" placeholder="Enter Manager Id" class="form-control .form-control-sm" id="managerId">
+      </div>
+    </div>
+    </div> 
+    
+      <button (click)='add()' type="submit" class="btn btn-danger btn-block">Submit</button>
+      
+    </form>
+  </div>
+</div>  
+
+

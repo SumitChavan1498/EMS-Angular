@@ -1,0 +1,27 @@
+@import '~ngx-toastr/toastr.css';
+
+body{
+    background-color: white;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+
+.fa-sign-out-alt {
+    color: gray;
+
+}
+
+.fa-sign-out-alt:hover {
+    color: white;
+}
+
+/* .toaster {  
+    padding: 5px 20px;  
+    margin: 5px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 14px;  
+  }  */

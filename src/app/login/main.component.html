@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
+   
+</head>
+
+
+<body>
+    <div class="header"><a class="link" ><h1>{{title}}</h1></a></div>    
+
+<div class="card" style="width: 25rem;">
+ 
+    <div class="card-body">
+      <h5 class="card-title">Login</h5>
+      
+        <form>
+         <div class="form-group">
+           <label for="inputID">User ID</label>
+           <input type="text" class="form-control" placeholder="Enter ID" id="empid">
+         </div>
+
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" placeholder="Enter Password" id="pass">
+        </div>
+
+        <button routerLink="/admin/show" type="submit" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-user-shield"></i></span>Login as Admin</button>
+        <button routerLink="/employee/view" type="submit" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-users"></i></span>Login as Employee</button>
+      </form>
+     
+      <!-- <button type="button" class="btn btn-labeled btn-success">
+      <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button> -->
+      
+    </div>
+  </div>
+
+
+
+  </body>

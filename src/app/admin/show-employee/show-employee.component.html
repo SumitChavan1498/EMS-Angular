@@ -1,0 +1,62 @@
+<body>
+
+    <form class="form-inline my-2 my-lg-0">
+        <input  class="form-control mr-sm-2" type="search" placeholder="Search Employee" [(ngModel)]='employeeId'>
+        <button class="btn btn-outline-warning  my-2 my-sm-0" (click)='search()' type="submit">Search</button>
+      </form>
+   
+      <!-- <div class="input-group mb-3">
+        <input type="search" class="form-control" placeholder="Enter Employee Id" [(ngModel)]='employeeId'>
+        <div class="input-group-append">
+          <button class="btn btn-warning" type="submit">Search</button>
+        </div>
+      </div> -->
+   
+
+<table class="table table-danger table-head table-sm"> 
+    <thead> 
+        <td>Emp ID</td> 
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>DOJ</td>  
+        <td>DOB</td> 
+        <td>Department</td>
+        <td>Grade</td>  
+        <td>Designation</td>
+        <td>Gender</td>
+        <td>Basic Salary</td>
+        <td>Marital Status</td>
+        <td>Address</td>
+        <!-- <td>Contact Number</td> -->
+        <td>Manage ID</td>
+        <td>Update</td>
+        <td>Delete</td>
+        
+
+    </thead>
+    <tbody *ngFor=" let a of empdata ">
+        <tr>
+            <td>{{a.empId}}</td>
+            <td>{{a.fname}}</td>
+            <td>{{a.lname}}</td>
+            <td>{{a.doj}}</td>  
+            <td>{{a.dob}}</td> 
+            <td>{{a.department}}</td>
+            <td>{{a.grade}}</td>
+            <td>{{a.designation}}</td>
+            <td>{{a.gender}}</td> 
+            <td>{{a.salary}}</td>
+            <td>{{a.maritalStatus}}</td>
+            <td>{{a.address}}</td>
+            <!-- <td>{{a.contact}}</td> -->
+            <td>{{a.managerId}}</td>
+            <td><a (click)='updateButtonClicked(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td>
+            <td><a (click)='delete(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td>
+           
+         </tr> 
+    </tbody>
+</table>
+
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+
+</body>

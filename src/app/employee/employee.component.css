@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+}
+
+.fa-sign-out-alt {
+    color: gray;
+
+}
+
+.fa-sign-out-alt:hover {
+    color: white;
+}

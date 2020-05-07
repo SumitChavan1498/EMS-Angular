@@ -1,0 +1,60 @@
+body {
+   
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.header {
+    text-align: center;
+    font-family: 'Bitter', serif;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    background-color: blueviolet;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: white;
+}
+
+
+
+.card {
+    margin-top: 3rem;
+    margin-left: 450px;
+    margin-bottom: auto;
+}
+
+
+.btn-label { 
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 3px 0 0 3px;}
+.btn-labeled {
+    padding-top: 0;
+    padding-bottom: 0;}
+
+/* .btn, .btn:active, .btn:visited {
+    background-color: white;
+    color: black;
+} */
+
+.btn-light:hover {
+    background-color: #bc13fe;
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: blueviolet;
+    color: black;
+}

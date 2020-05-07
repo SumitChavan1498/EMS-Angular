@@ -2,12 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EmpMaintenaceSys</title>
+  <title>EMS</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    body {
+      background-color: #1E0010;
+    }
+    
+    .main {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 150px;
+      height: 20px;
+      
+      /* centralized thanks to Eduardo Lopes suggestion */
+      /* -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg); */
+    }
+    
+    figure {
+      border-radius: 50%;
+      width: 4px;
+      height: 4px;
+      margin: 10px;
+      display: inline-block;
+      
+      background-color: white;
+      box-shadow: 0 0 1em rgba(255,255,255, .5);
+      border: 1px solid rgba(255,255,255, 0.1);
+      
+      /* transition: all 0.2s ease; */
+      
+      
+    }
+    
+    figure:nth-child(1) {
+      -webkit-animation: changeColors 10s infinite;
+      -moz-animation: changeColors 10s infinite;
+      animation: changeColors 10s infinite;
+    }
+    
+    figure:nth-child(2) {
+      -webkit-animation: changeColors 10s infinite 1s;
+      -moz-animation: changeColors 10s infinite 1s;
+      animation: changeColors 10s infinite 1s;
+     }
+    
+    figure:nth-child(3) {
+      -webkit-animation: changeColors 10s infinite 2s;
+      -moz-animation: changeColors 10s infinite 2s;
+      animation: changeColors 10s infinite 2s;
+     }
+    
+    figure:nth-child(4) {
+      -webkit-animation: changeColors 10s infinite 3s;
+      -moz-animation: changeColors 10s infinite 3s;
+      animation: changeColors 10s infinite 3s;
+    }
+    
+    figure:nth-child(5) {
+      -webkit-animation: changeColors 10s infinite 4s;
+      -moz-animation: changeColors 10s infinite 4s;
+      animation: changeColors 10s infinite 4s;
+    }
+    
+    @-webkit-keyframes changeColors {
+      0%, 49% {
+        background-color: #E52900;
+        box-shadow: 0 0 1em rgba(229,41,0, 1);
+      }
+      50%, 100% {
+        background-color: white;
+        box-shadow: 0 0 1em rgba(255,255,255, .5);
+      }
+    }
+    @-moz-keyframes changeColors {
+      0%, 49% {
+        background-color: #E52900;
+        box-shadow: 0 0 1em rgba(229,41,0, 1);
+      }
+      50%, 100% {
+        background-color: white;
+        box-shadow: 0 0 1em rgba(255,255,255, .5);
+      }
+    }
+    @keyframes changeColors {
+      0%, 49% {
+        background-color: #E52900;
+        box-shadow: 0 0 1em rgba(229,41,0, 1);
+      }
+      50%, 100% {
+        background-color: white;
+        box-shadow: 0 0 1em rgba(255,255,255, .5);
+      }
+    }
+  </style>
+
+
+
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+   
+    <div class='main'>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+    </div>
+
+  </app-root>
 </body>
 </html>
+
+

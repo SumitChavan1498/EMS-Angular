@@ -1,0 +1,55 @@
+[
+    {
+        "id":101,
+        "name":"Shubham",
+        "dept": "Product Development",
+        "grade": "M1",
+        "design" : "Developer",
+        "gender": "Male",
+        "basic": 120000,
+        "martial": "Single",
+        "address": "Pune",
+        "contact": 9090909090,
+        "managerID": 1
+    },
+    {
+        "id":102,
+        "name":"Rakesh",
+        "dept": "Marketing",
+        "grade": "M2",
+        "design" : "Senior Manager",
+        "gender": "Male",
+        "basic": 320000,
+        "martial": "Married",
+        "address": "Mumbai",
+        "contact": 9898899899,
+        "managerID": 2
+    },
+    {
+        "id":102,
+        "name":"Sarika",
+        "dept": "Product Development",
+        "grade": "M1",
+        "design" : "Tester",
+        "gender": "Female",
+        "basic": 20000,
+        "martial": "Single",
+        "address": "Pune",
+        "contact": 9090909454,
+        "managerID": 1
+    },
+    {
+        "id":101,
+        "name":"Keshav",
+        "dept": "HR",
+        "grade": "M3",
+        "design" : "HR",
+        "gender": "Male",
+        "basic": 110000,
+        "martial": "Divorced",
+        "address": "Banglore",
+        "contact": 8789878987,
+        "managerID": 3
+    }
+   
+]
