@@ -9,6 +9,9 @@ import { ShowEmployeeComponent } from './admin/show-employee/show-employee.compo
 import { SearchEmployeeComponent } from './admin/search-employee/search-employee.component';
 import { ViewEmployeeComponent } from './employee/view-employee/view-employee.component';
 import { ApplyForLeaveComponent } from './employee/apply-for-leave/apply-for-leave.component';
+import { DeleteAllEmployeeComponent } from './admin/delete-all-employee/delete-all-employee.component';
+import { LeavestatusComponent } from './employee/leavestatus/leavestatus.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -16,23 +19,27 @@ const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot([
-  
+    {path: '',redirectTo: "/login", pathMatch: 'full'},
   {path:'admin',component:AdminComponent,
   children: [
     {path: 'update',component:UpdateComponent},
     {path: 'show',component:ShowEmployeeComponent},
     {path: 'add' ,component:AddEmployeeComponent},
-    {path: 'search',component:SearchEmployeeComponent} 
+    {path: 'search',component:SearchEmployeeComponent},
+    {path: 'deleteall',component:DeleteAllEmployeeComponent}
   ]
 },
 
   {path:'employee',component:EmployeeComponent,
   children: [
     {path: 'view',component:ViewEmployeeComponent},
-    {path: 'leave',component:ApplyForLeaveComponent}
+    {path: 'leave',component:ApplyForLeaveComponent},
+    {path: 'viewstatus',component:LeavestatusComponent}
+    
   ]
 },
   {path:'login',component:MainComponent},
+  {path: '**' ,component:ErrorComponent}
   
   ])],
   exports: [RouterModule]

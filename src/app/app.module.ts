@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { MainComponent } from './login/main.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AddEmployeeComponent } from './admin/add-employee/add-employee.component';
 import { UpdateComponent } from './admin/updateEmployee/update.component';
@@ -17,9 +17,16 @@ import { SearchEmployeeComponent } from './admin/search-employee/search-employee
 
 
 import { ViewEmployeeComponent } from './employee/view-employee/view-employee.component';
-import { ApplyForLeaveComponent } from './employee/apply-for-leave/apply-for-leave.component'; 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-//import { NgxPaginationModule } from 'ngx-pagination';
+import { ApplyForLeaveComponent } from './employee/apply-for-leave/apply-for-leave.component';
+import { DeleteAllEmployeeComponent } from './admin/delete-all-employee/delete-all-employee.component'; 
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+import { EmployeeService } from './employee.service';
+import { LeavestatusComponent } from './employee/leavestatus/leavestatus.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -33,19 +40,25 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ShowEmployeeComponent,
     SearchEmployeeComponent,
     ViewEmployeeComponent,
-    ApplyForLeaveComponent
+    ApplyForLeaveComponent,
+    DeleteAllEmployeeComponent,
+    LeavestatusComponent,
+    ErrorComponent
    
     
   ],
   imports: [
+    
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-   // NgxPaginationModule,
+    NgxPaginationModule,
     FormsModule,
-    NgbModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+ 
   ],
-  providers: [AdminService],
+  providers: [AdminService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,8 +4,10 @@ import { Router } from '@angular/router';
 import { Employee } from '../employee';
 import { templateJitUrl } from '@angular/compiler';
 import { ShowEmployeeComponent } from './show-employee/show-employee.component';
- 
 
+
+ 
+ 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -17,13 +19,17 @@ export class AdminComponent implements OnInit {
   empId: number;
   employeeId:number;
   searchEmployee:Employee;
-
+  
   constructor(private admin: AdminService,private router: Router) { }
 
   ngOnInit(): void {
     this.loadData();
     this.search(this.employeeId);
-  }
+   
+
+  } 
+
+  
 
   
   loadData() {
@@ -48,6 +54,7 @@ export class AdminComponent implements OnInit {
     console.log("inside delete");
   }
 
+  
  search(employeeId){
   //  console.log("idhr to aara hai");
   //  console.log("employee i ===="+this.employeeId);

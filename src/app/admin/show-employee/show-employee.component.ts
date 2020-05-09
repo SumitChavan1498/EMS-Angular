@@ -16,6 +16,7 @@ export class ShowEmployeeComponent implements OnInit {
   employeeId;
   searchedEmployee:Employee;
   //p: number = 1
+  p: number = 1;
 
   constructor(private admin: AdminService,private adminComp: AdminComponent,private router: Router) { }
 

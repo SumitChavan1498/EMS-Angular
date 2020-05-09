@@ -1,5 +1,6 @@
 export class Employee {
     empId: number;
+    empPass: string;
     fname: string;
     lname: string;
     doj: Date;

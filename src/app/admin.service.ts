@@ -3,6 +3,7 @@ import { Employee } from './employee'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { retry, catchError} from 'rxjs/operators';
+import { AdminLogin } from './AdminLogin';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,11 @@ export class AdminService {
     })
   }
 
-  
+  getLogin(){
+    console.log("inside getlogin service");
+    return this.http.get<AdminLogin[]>('http://localhost:2244/api/getall');
+
+  }
 
 
   GetEmployees(): Observable<Employee> {
@@ -50,6 +55,14 @@ export class AdminService {
     console.log("inside findbuid"+empId);
     return this.http.get<Employee>('http://localhost:1133/api/findById/'+empId);
   }
+
+
+  deleteAll(){
+    console.log("inside deleteall");
+    return this.http.delete<Employee>('http://localhost:1133/api/deleteAll');
+  }
+
+
 
 
   erroeHandl(erroeHandl: any): import("rxjs").OperatorFunction<unknown, Employee> {

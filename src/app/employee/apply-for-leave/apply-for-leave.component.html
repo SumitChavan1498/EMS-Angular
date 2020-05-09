@@ -1,1 +1,47 @@
-<p>apply-for-leave works!</p>
+
+
+<body>
+
+<div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h5 class="card-title">Apply For Leave</h5>
+
+      <form>
+        <div class="form-group">
+          <label for="empId">Employee ID</label>
+          <input type="number" disabled="disabled" [(ngModel)]='leave.empId' [ngModelOptions]="{standalone: true}" class="form-control" id="empId"  placeholder="Enter employee Id">
+         
+        </div>
+        <div class="form-group">
+          <label for="dateOfApplication">Date of Application</label>
+          <input type="date" [(ngModel)]='leave.dateOfApplication' [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfApplication" placeholder="Enter date of Application">
+        </div>
+        
+        <div class="form-group">
+            <label for="dateOfLeave">Date of Leave</label>
+            <input type="date" [(ngModel)]='leave.dateOfLeave' [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfLeave" placeholder="Enter date of Application">
+          </div>
+
+          <div class="form-group">
+            <label for="numberOfDays">Number of Days</label>
+            <input type="number" [(ngModel)]='leave.numberOfDays' [ngModelOptions]="{standalone: true}" class="form-control" id="numberOfDays" placeholder="Enter Number of Days">
+          </div>
+
+          <div class="form-group">
+            <label for="managerId">Manager Id</label>
+            <input type="number" disabled="disabled" [(ngModel)]='leave.managerId' [ngModelOptions]="{standalone: true}" class="form-control" id="managerId" placeholder="">
+          </div>
+
+        
+        <button type="button" (click)='applyForLeave()' class="btn btn-primary">Apply</button>
+      </form>
+     
+
+    </div>
+  </div>
+
+ 
+  
+
+</body>

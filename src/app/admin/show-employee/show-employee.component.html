@@ -13,7 +13,7 @@
       </div> -->
    
 
-<table class="table table-danger table-head table-sm"> 
+<table class="table table-bordered table-striped table-danger table-head table-sm"> 
     <thead> 
         <td>Emp ID</td> 
         <td>First Name</td>
@@ -34,7 +34,7 @@
         
 
     </thead>
-    <tbody *ngFor=" let a of empdata ">
+    <tbody *ngFor=" let a of empdata | paginate: { itemsPerPage: 10, currentPage: p}">
         <tr>
             <td>{{a.empId}}</td>
             <td>{{a.fname}}</td>
@@ -56,7 +56,7 @@
          </tr> 
     </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
-<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
 
 </body>

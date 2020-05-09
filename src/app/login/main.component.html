@@ -16,16 +16,16 @@
         <form>
          <div class="form-group">
            <label for="inputID">User ID</label>
-           <input type="text" class="form-control" placeholder="Enter ID" id="empid">
+           <input type="text" [(ngModel)]='id'  [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Enter ID" id="empid">
          </div>
 
         <div class="form-group">
           <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" placeholder="Enter Password" id="pass">
+          <input type="password" [(ngModel)]='pass'  [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Password" id="pass">
         </div>
 
-        <button routerLink="/admin/show" type="submit" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-user-shield"></i></span>Login as Admin</button>
-        <button routerLink="/employee/view" type="submit" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-users"></i></span>Login as Employee</button>
+        <button (click)='adminLogin()' type="submit" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-user-shield"></i></span>Login as Admin</button>
+        <button (click)='employeeLogin()' type="button" class="btn btn-dark btn-labeled btn-block"><span class="btn-label"><i class="fas fa-users"></i></span>Login as Employee</button>
       </form>
      
       <!-- <button type="button" class="btn btn-labeled btn-success">

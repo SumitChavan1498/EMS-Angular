@@ -1,26 +1,35 @@
 
 
 
-
 <div class="card" style="width: 50rem;">
   <div class="card-header">
     Add Employee
   </div>
   <div class="card-body">
     
-    <form>
+    <form >
       
+      <div class="row">
+        <div class="col">
       <div class="form-group">
-        <label>Employee ID</label>
-        <input type="number" [(ngModel)]='employee.empId' [ngModelOptions]="{standalone: true}" placeholder="Enter Employee Id" class="form-control .form-control-sm" id="empId">
+        <label for="empId" class="control-label">Employee ID</label>
+        <input required type="number" name="empId" [(ngModel)]='employee.empId' [ngModelOptions]="{standalone: true}" placeholder="Enter Employee Id" class="form-control .form-control-sm" id="empId" >      
+        </div>
+
+        <div class="form-group">
+          <label for="empPass" class="control-label">Password</label>
+          <input required type="text" name="empPass" [(ngModel)]='employee.empPass' [ngModelOptions]="{standalone: true}" placeholder="Enter Password" class="form-control .form-control-sm" id="empPass" >
+          </div>
+        </div>
       </div>
+    
     
     
     <div class="row">
     <div class="col">
       <div class="form-group">
         <label>First Name</label>
-        <input type="text" [(ngModel)]='employee.fname' [ngModelOptions]="{standalone: true}" placeholder="Enter First Name" class="form-control .form-control-sm" id="firstname">
+        <input type="text" [(ngModel)]='employee.fname'  [ngModelOptions]="{standalone: true}" placeholder="Enter First Name" class="form-control .form-control-sm" id="firstname">
       </div>
     </div>
     
