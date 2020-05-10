@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/employee';
 import { AdminService } from 'src/app/admin.service';
 import { Router } from '@angular/router';
-import { FormGroup,  FormControl } from '@angular/forms';
+import { FormGroup,  FormControl, NgForm } from '@angular/forms';
 import { AdminComponent } from '../admin.component';
 
 
@@ -15,15 +15,15 @@ import { AdminComponent } from '../admin.component';
 export class AddEmployeeComponent implements OnInit {
   empdata: any[];
   employee: Employee = new Employee();
-
+form:any[];
   EmployeeForm: FormGroup;
 
   constructor(private admin: AdminService,private router: Router, private adminComp: AdminComponent) { }
 
   ngOnInit(): void {
-    this.EmployeeForm = new FormGroup({
-      fname: new FormControl()
-    });
+    // this.EmployeeForm = new FormGroup({
+    //   fname: new FormControl()
+    // });
   }
 
   add() {

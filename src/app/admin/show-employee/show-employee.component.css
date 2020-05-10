@@ -4,7 +4,7 @@ a {
 }
 
 table {
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -15,11 +15,7 @@ table {
 .fa-edit:hover {
     color: #24a0ed;
 }
-
+/* 
 thead {
     font-weight: bold;
-}
-
-.pagination-controls {
-    
-}
+} */
