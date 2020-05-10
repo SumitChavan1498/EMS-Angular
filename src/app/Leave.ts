@@ -1,4 +1,5 @@
 export class Leave {
+    leaveId:number;
     empId: number;
     status: string;
     total: number;

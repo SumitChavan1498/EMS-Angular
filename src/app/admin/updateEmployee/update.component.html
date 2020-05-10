@@ -1,7 +1,7 @@
 
 <body>
 
-<div class="card" style="width: 50rem;">
+<div class="card" style="width: 75rem;">
     <div class="card-header">
       Update Employee
     </div>
@@ -72,7 +72,7 @@
           </select>
   
          
-          <!-- <input type="text" [(ngModel)]='employee.grade' placeholder="Enter Grade" class="form-control" id="grade"> -->
+          <!-- <input type="text" [(ngModel)]='employee.grade' placeholder="Enter Grade" class="form-control" id="grade"> --> 
         </div>
       </div>
       </div>
@@ -93,8 +93,8 @@
             <option>Female</option>
           </select>
   
-            <!-- <input type="text" [(ngModel)]='employee.gender' placeholder="Enter Gender" class="form-control .form-control-sm" id="gender"> -->
-        </div>
+             <!-- <input type="text" [(ngModel)]='employee.gender' placeholder="Enter Gender" class="form-control .form-control-sm" id="gender"> --> 
+         </div>
       </div>
       </div>
       
@@ -114,10 +114,10 @@
             <option>Married</option>
             <option>Divorced</option>
             <option>Widowed</option>
-          </select>
+          </select> 
          
           <!-- <input type="text" [(ngModel)]='employee.maritalStatus' placeholder="Enter Marital Status" class="form-control .form-control-sm" id="maritalStat"> -->
-        </div>
+         </div>
       </div>
       </div>
   
@@ -139,13 +139,20 @@
       </div>
       </div>
       
-         <button (click)='update(employee)' type="submit" class="btn btn-primary btn-block">Update</button> 
+         <button (click)='update(employee);updateToastr()' type="submit" class="btn btn-primary btn-block">Update</button> 
         
       </form>
     </div>
-  </div>
-             
+  </div> 
+ 
+
   
+
+
+
+
+
+
   
   
 </body>

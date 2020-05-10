@@ -21,10 +21,39 @@
             <td>{{a.numberOfDays}}</td>  
             <td>{{a.status}}</td> 
             
+            <td><a (click)='approved(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td>
+            <td><a (click)='reject(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td>
+           
+         </tr> 
+    </tbody>
+</table>
+
+<h2>MyLeaves</h2>
+<table class="table table-bordered table-striped table-danger table-head table-sm"> 
+    <thead> 
+        <td>Emp ID</td> 
+        <td>Date of Application</td>
+        <td>Date of Leave </td>
+        <td>Number of Days</td>  
+        <td>Status</td> 
+        
+        
+
+    </thead>
+    <tbody *ngFor=" let a of myLeaves">
+        <tr>
+            <td>{{a.empId}}</td>
+            <td>{{a.dateOfApplication}}</td>
+            <td>{{a.dateOfLeave}}</td>
+            <td>{{a.numberOfDays}}</td>  
+            <td>{{a.status}}</td> 
+            
             <!-- <td><a (click)='updateButtonClicked(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td> -->
             <!-- <td><a (click)='delete(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td> -->
            
          </tr> 
     </tbody>
 </table>
+
+
   </div>

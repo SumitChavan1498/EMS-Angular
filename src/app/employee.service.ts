@@ -9,6 +9,7 @@ import { Employee } from './employee';
 export class EmployeeService {
 
   idAfterLoggedIn : any;
+  managerIdafterLoggedIn:any;
 
   constructor(private http: HttpClient) { } 
 
@@ -40,6 +41,22 @@ export class EmployeeService {
 
   updateDetails(empId,leave) {
     return this.http.put<Leave[]>('http://localhost:8008/api/response/'+empId,leave);
+  }
+
+  getLeaveByManagerId(){
+    return this.http.get<Leave[]>('http://localhost:8008/api/getLeave/'+this.idAfterLoggedIn);
+  }
+
+  getPendingLeaves(id){
+    return this.http.get<Leave[]>('http://localhost:8008/api/getPendingLeaves/'+id);
+  }
+
+  getLeaveByEmpId(){
+    return this.http.get<Leave[]>('http://localhost:8008/api/getMyLeaves/'+this.idAfterLoggedIn);
+  }
+
+  updateLeave(leave:Leave){
+    return this.http.put<Leave>('http://localhost:8008/api/response/'+leave.empId,leave);
   }
 
 }

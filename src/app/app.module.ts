@@ -13,20 +13,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './admin/add-employee/add-employee.component';
 import { UpdateComponent } from './admin/updateEmployee/update.component';
 import { ShowEmployeeComponent } from './admin/show-employee/show-employee.component';
-import { SearchEmployeeComponent } from './admin/search-employee/search-employee.component';
+
 
 
 import { ViewEmployeeComponent } from './employee/view-employee/view-employee.component';
 import { ApplyForLeaveComponent } from './employee/apply-for-leave/apply-for-leave.component';
 import { DeleteAllEmployeeComponent } from './admin/delete-all-employee/delete-all-employee.component'; 
-//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { EmployeeService } from './employee.service';
 import { LeavestatusComponent } from './employee/leavestatus/leavestatus.component';
 import { ErrorComponent } from './error/error.component';
+
+import { EmployeeFilterPipe } from './admin/employeefilter.pipe';
+import { SearchemployeeComponent } from './employee/searchemployee/searchemployee.component';
+import { EmpFilterPipe } from './employee/empfilter.pipe';
+
+
 
 
 @NgModule({
@@ -38,12 +44,20 @@ import { ErrorComponent } from './error/error.component';
     AddEmployeeComponent,
     UpdateComponent,
     ShowEmployeeComponent,
-    SearchEmployeeComponent,
     ViewEmployeeComponent,
     ApplyForLeaveComponent,
     DeleteAllEmployeeComponent,
     LeavestatusComponent,
-    ErrorComponent
+    ErrorComponent,
+    EmployeeFilterPipe,
+    EmployeeFilterPipe,
+    SearchemployeeComponent,
+    
+    EmployeeFilterPipe,
+    
+    EmpFilterPipe
+    
+   
    
     
   ],
@@ -55,7 +69,14 @@ import { ErrorComponent } from './error/error.component';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+  
+    })
  
   ],
   providers: [AdminService,EmployeeService],

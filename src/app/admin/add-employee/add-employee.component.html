@@ -1,7 +1,7 @@
 
 
 
-<div class="card" style="width: 50rem;">
+<div class="card" style="width: 70rem;">
   <div class="card-header">
     Add Employee
   </div>
@@ -33,11 +33,11 @@
         </span>
         </div>
         </div>
-      </div>
+      
     
     
     
-    <div class="row">
+      
     <div class="col">
       <div class="form-group">
         <label>First Name</label>
@@ -50,7 +50,9 @@
         </span>
       </div>
     </div>
-    
+      </div>
+  
+      <div class="row">
     <div class="col">
       <div class="form-group">
         <label>Last Name</label>
@@ -63,10 +65,10 @@
         </span>
       </div>
     </div>
-    </div>
+    
     
 
-     <div class="row">
+    
       <div class="col">
       <div class="form-group">
         <label>Date of Joining</label>
@@ -77,6 +79,9 @@
       </div>
       </div>
     
+
+
+     
       <div class="col">
       <div class="form-group">
         <label>Date of Birth</label>
@@ -86,10 +91,10 @@
         </span>
       </div>
     </div>
-    </div>
+  </div>
 
 
-    <div class="row">
+  <div class="row">
       <div class="col">
       <div class="form-group">
         <label>Department</label>
@@ -120,14 +125,11 @@
           <option>M6</option>
           <option>M7</option>
         </select>
-
-       
-       
        </div>
     </div>
-    </div>
+    
       
-    <div class="row">
+    
       <div class="col">
       <div class="form-group">
         <label>Designation</label>
@@ -138,7 +140,9 @@
         </span>
       </div>
       </div>
+  </div>
     
+  <div class="row">
       <div class="col">
       <div class="form-group">
         <label>Gender</label>
@@ -153,9 +157,9 @@
          
       </div>
     </div>
-    </div>
     
-    <div class="row">
+    
+    
       <div class="col">
       <div class="form-group">
         <label>Basic Salary</label>
@@ -208,11 +212,15 @@
         </span>
       </div>
     </div>
-    </div> 
-      
+    
+      <div class="col">
+        <!-- <label>    </label> -->
+      <br>
+     
        <!-- <button (click)='add()' type="submit" class="btn btn-danger btn-block">Submit</button>  -->
-      <button type="submit"  [disabled]='!addForm.valid'   name="add" class="btn btn-danger btn-block">Add Employee</button>
- 
+      <button type="submit"  [disabled]='!addForm.valid'  name="add" class="btn btn-danger btn-block " style="margin-top: 5px;">Add Employee</button>
+    </div>
+  </div>
 
     </form>
   </div>

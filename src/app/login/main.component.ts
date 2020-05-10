@@ -47,7 +47,7 @@ export class MainComponent implements OnInit {
       if(cred.adminId==this.id){
         if(cred.adminPass==this.pass){
           this.adminFound = true;
-         
+
           this.router.navigate(['/admin/show']);
         }
       }
@@ -63,6 +63,7 @@ export class MainComponent implements OnInit {
         if(cred.empPass==this.pass){
           this.empFound = true;
           this.employeeservice.idAfterLoggedIn=cred.empId;
+          this.employeeservice.managerIdafterLoggedIn=cred.managerId;
           this.router.navigate(['/employee/view']);
         }
       }

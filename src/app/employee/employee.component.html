@@ -18,7 +18,7 @@
               <a class="nav-link"  routerLink="/employee/view">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Search Employee</a>
+              <a class="nav-link" routerLink="/employee/search">Search Employee</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " routerLink="/employee/leave">Apply for Leave</a>
@@ -32,10 +32,7 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+         
     
           <a class="logout" type="submit" (click)='logout()'  data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>

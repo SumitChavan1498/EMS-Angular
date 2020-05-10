@@ -19,6 +19,7 @@ export class AdminComponent implements OnInit {
   empId: number;
   employeeId:number;
   searchEmployee:Employee;
+ 
   
   constructor(private admin: AdminService,private router: Router) { }
 
@@ -29,7 +30,7 @@ export class AdminComponent implements OnInit {
 
   } 
 
-  
+
 
   
   loadData() {

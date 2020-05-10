@@ -4,7 +4,7 @@ a {
 }
 
 table {
-    margin-top: 50px;
+    margin-top: 25x;
     text-align: center;
 }
 
@@ -19,3 +19,24 @@ table {
 thead {
     font-weight: bold;
 } */
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin-left: 450px;
+    margin-top: 15px;
+    color: black;
+}
+
+
+
+
+.paginate {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginate /deep/ .ngx-pagination .current {
+    background:black;
+  }
