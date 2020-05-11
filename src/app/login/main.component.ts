@@ -22,11 +22,21 @@ export class MainComponent implements OnInit {
 
   empFound = false;
   adminFound = false;
-  constructor(private adminservice:AdminService,private router:Router,private employeeservice: EmployeeService) { }
+
+  show: boolean;
+
+
+  constructor(private adminservice:AdminService,private router:Router,private employeeservice: EmployeeService) {
+    this.show = false;
+   }
 
   ngOnInit(): void {
     this.loadAdminCredential();
     this.loadEmployeeCredential();
+  }
+
+  password() {
+    this.show = !this.show;
   }
 
   loadAdminCredential(){

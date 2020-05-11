@@ -11,7 +11,10 @@ export class EmployeeFilterPipe implements PipeTransform {
         if (!empdata || !searchTerm) {
             return empdata;
         }
-        
+            else if(selected=="Employee Id") {
+              return empdata.filter(empdata =>
+                  String(empdata.empId).toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+            }
              else if( selected=="First Name") {
                 return empdata.filter(empdata =>
                   empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);

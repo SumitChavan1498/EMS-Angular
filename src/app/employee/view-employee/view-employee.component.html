@@ -1,28 +1,67 @@
 <body>
-<div class="card text-white bg-dark" style="width: 35rem;">
-  <div class="card-header">
-  <h5>  Welcome {{employee.fname}}! </h5>
-  </div>
-  <ol class="list-group list-group-flush  bg-primary">
-    <div class="row">
-      <div class="col">
-        <li class="list-group-item list-group-item-dark">Employee Id: {{employee.empId}}</li>
-      </div>
-      <div class="col">
-        <li class="list-group-item list-group-item-dark"> Name: {{employee.fname}} {{employee.lname}} </li>
-      </div>
-    </div>
-  
-  <li class="list-group-item list-group-item-dark"> Name: {{employee.fname}} {{employee.lname}} </li>
-  <li class="list-group-item list-group-item-dark"> Date of Joining: {{employee.doj}} </li>
-  <li class="list-group-item list-group-item-dark"> Date of Birth: {{employee.dob}} </li>
-  <li class="list-group-item list-group-item-dark"> Deprtment: {{employee.department}} </li>
-  <li class="list-group-item list-group-item-dark"> Grade: {{employee.grade}} </li>
-  <li class="list-group-item list-group-item-dark"> Designation: {{employee.designation}} </li>
-  <li class="list-group-item list-group-item-dark"> Manager Id: {{employee.managerId}} </li>
-  </ol>
-</div>
 
+
+<div class="bg-cover"></div>
+<div class="container">
+  <div class="header">
+    <i class="fa fa-bars"></i>
+    <i class="fa fa-cog"></i>
+  </div>
+  <div class="middle">
+    <div class="avatar"><i class="material-icons" style="font-size: 100px; color: rgba(255,255,255,0.7)">&#xe853;</i></div>
+    <h4 class="name">{{employee.fname}}</h4>
+    <h4 class="work">{{employee.empId}}</h4>
+    <h4 class="social"> {{employee.gender}} &nbsp;&nbsp;|&nbsp;&nbsp; {{employee.grade}} &nbsp;&nbsp;|&nbsp;&nbsp;{{employee.maritalStatus}}</h4>
+  </div>
+  <div class="footer">
+   <button class="btn-follow">{{employee.designation}}</button><br/>
+   <div class="row">
+    <div class="col">
+      Date of Joining:
+    </div>
+    <div class="col">
+      {{employee.doj}}
+    </div>
+   </div>
+   
+   <div class="row">
+    <div class="col">
+      Date of Birth:
+    </div>
+    <div class="col">
+      {{employee.dob}}
+    </div>
+   </div>
+   
+   <div class="row">
+    <div class="col">
+      Department:
+    </div>
+    <div class="col">
+      {{employee.department}}
+    </div>
+   </div>
+   
+   <div class="row">
+    <div class="col">
+      Manager Id:
+    </div>
+    <div class="col">
+      {{employee.managerId}}
+    </div>
+   </div>
+   <!-- <ul>
+      <li>Date of Joining: {{employee.doj}}</li>
+      <li>Date of Birth: {{employee.dob}} </li>
+      <li>Department: {{employee.department}}</li>
+      <li>Grade: {{employee.grade}} </li>
+      <li>Manager Id: {{employee.managerId}} </li>
+    </ul> -->
+    <!-- <i class="fa fa-lock"></i>
+    <br/> -->
+    <!-- <h4 class="profile-status">This profile is hidden</h4> -->
+  </div>
+</div>
 
 
 

@@ -23,7 +23,7 @@ export class AddEmployeeComponent implements OnInit {
     private adminComp: AdminComponent,
     private toastr: ToastrService
   ) {
-    this.curDate = new Date();
+    // this.curDate = new Date();
   }
 
   ngOnInit(): void {
