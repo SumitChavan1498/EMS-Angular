@@ -33,7 +33,7 @@
         </span>
         </div>
         </div>
-      
+       
     
     
     
@@ -73,7 +73,8 @@
       <div class="form-group">
         <label>Date of Joining</label>
         <input type="date" [(ngModel)]='employee.doj' [ngModelOptions]="{standalone: true}" #doj="ngModel" required placeholder="Enter Date of Joining" class="form-control .form-control-sm" id="doj">
-        <span *ngIf='!doj.valid && doj.dirty && doj.touched'>
+       
+        <span *ngIf='!doj.valid && doj.pristine && doj.touched' > 
           <p style="color: #f40552">This is a required field</p>
         </span>
       </div>
@@ -85,8 +86,8 @@
       <div class="col">
       <div class="form-group">
         <label>Date of Birth</label>
-        <input type="date" [(ngModel)]='employee.dob' [ngModelOptions]="{standalone: true}" #dob="ngModel" required placeholder="Enter Date of Birth" class="form-control .form-control-sm" id="dob">
-        <span *ngIf='!doj.valid && doj.dirty && dob.touched'>
+        <input type="date" [(ngModel)]='employee.dob' [ngModelOptions]="{standalone: true}" required #dob="ngModel"  placeholder="Enter Date of Birth" class="form-control .form-control-sm" id="dob">
+        <span *ngIf='!dob.valid && dob.pristine && dob.touched'>
           <p style="color: #f40552">This is a required field</p>
         </span>
       </div>
@@ -114,9 +115,6 @@
       <div class="form-group">
         <label>Grade</label>
         <select type="text" [(ngModel)]='employee.grade' [ngModelOptions]="{standalone: true}" #grade="ngModel" required placeholder="Enter Grade" class="form-control" id="grade">
-          <span *ngIf='!grade.valid && grade.touched && grade.pristine' >
-            <p style="color: #f40552">This is a required field</p>
-        </span>
           <option>M1</option>
           <option>M2</option>
           <option>M3</option>
@@ -125,6 +123,11 @@
           <option>M6</option>
           <option>M7</option>
         </select>
+          <span *ngIf='!grade.valid && grade.touched && grade.pristine' >
+            <p style="color: #f40552">This is a required field</p>
+        </span>
+          
+       
        </div>
     </div>
     
@@ -147,13 +150,12 @@
       <div class="form-group">
         <label>Gender</label>
         <select type="text" [(ngModel)]='employee.gender' [ngModelOptions]="{standalone: true}" #gender="ngModel" required placeholder="Enter Gender" class="form-control" id="gender">
-          <span *ngIf='!gender.valid && gender.touched && gender.pristine' >
-            <p style="color: #f40552">This is a required field</p>
-        </span>
           <option>Male</option>
           <option>Female</option>
         </select> 
-
+        <span *ngIf='!gender.valid && gender.touched && gender.pristine' >
+          <p style="color: #f40552">This is a required field</p>
+      </span>
          
       </div>
     </div>
@@ -174,15 +176,14 @@
       <div class="form-group">
         <label>Marital Status</label>
         <select type="text" [(ngModel)]='employee.maritalStatus' [ngModelOptions]="{standalone: true}" #maritalStatus="ngModel" required placeholder="Enter Marital Status" class="form-control" id="maritalStat">
-          <span *ngIf='!maritalStatus.valid && maritalStatus.touched && maritalStatus.pristine' >
-            <p style="color: #f40552">This is a required field</p>
-        </span>
           <option>Single</option>
           <option>Married</option>
           <option>Divorced</option>
           <option>Widowed</option>
         </select> 
-       
+        <span *ngIf='!maritalStatus.valid && maritalStatus.touched && maritalStatus.pristine' >
+          <p style="color: #f40552">This is a required field</p>
+      </span>
         
       </div>
     </div>
@@ -219,6 +220,10 @@
      
        <!-- <button (click)='add()' type="submit" class="btn btn-danger btn-block">Submit</button>  -->
       <button type="submit"  [disabled]='!addForm.valid'  name="add" class="btn btn-danger btn-block " style="margin-top: 5px;">Add Employee</button>
+     
+       
+        
+    
     </div>
   </div>
 

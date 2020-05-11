@@ -1,6 +1,6 @@
 <body>
 
-    
+  
       
      <!-- <div *ngFor="let b of empdata | employeefilter:searchTerm"> --> 
         <!-- <div (click)="onClick(a.empId)" class="pointerCursor"> -->
@@ -10,16 +10,25 @@
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>  
                 </div>
                 <input type="text" class="form-control" placeholder="Search by ...." [(ngModel)]="searchTerm">
-              </div>
-              <select id="Select1" [(ngModel)]="selected">
+                <select id="Select1" [(ngModel)]="selected">
+                    <option>Employee ID</option>
+                    <option>First Name</option>
+                    <option>Last Name</option>
+                    <option>Department</option>
+                    <option>Grade</option>
+                    <!-- <option>Address1</option>
+                    <option>Address2</option> -->
+                  </select>  
+            </div>
+              <!-- <select id="Select1" [(ngModel)]="selected">
                 <option>Id</option>
                 <option>First Name</option>
                 <option>Last Name</option>
                 <option>Department</option>
-                <option>Grade</option>
+                <option>Grade</option> -->
                 <!-- <option>Address1</option>
                 <option>Address2</option> -->
-              </select>
+              <!-- </select> -->
 
         
 

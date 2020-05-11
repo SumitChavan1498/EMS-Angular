@@ -25,17 +25,10 @@ export class EmpFilterPipe implements PipeTransform {
         }
         else if(selected=="Grade") {
           return empdata.filter(empdata =>
-            empdata.grade.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+              String(empdata.grade).toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
         }
-        // else if(selected=="Last Name") {
-        //   return empdata.filter(empdata =>
-        //     empdata.department.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
-        // }
 
 
-            
-       
-           
     }
 }
 

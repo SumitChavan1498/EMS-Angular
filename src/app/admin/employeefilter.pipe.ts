@@ -12,9 +12,7 @@ export class EmployeeFilterPipe implements PipeTransform {
             return empdata;
         }
         
-            // return empdata.filter(empdata =>
-            //     empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
-            else if( selected=="First Name") {
+             else if( selected=="First Name") {
                 return empdata.filter(empdata =>
                   empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
               }
@@ -28,8 +26,9 @@ export class EmployeeFilterPipe implements PipeTransform {
               }
               else if(selected=="Grade") {
                 return empdata.filter(empdata =>
-                  empdata.grade.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+                    String(empdata.grade).toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
               }
+
            
     }
 }

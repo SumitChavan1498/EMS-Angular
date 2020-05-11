@@ -16,17 +16,18 @@ export class ApplyForLeaveComponent implements OnInit {
   leave: Leave = new Leave();
   emp: Employee = new Employee();
   max_val;
-  curDate: Date;
+  // curDate: Date;
+  remainingLeaves:number;
   
   constructor(private employee: EmployeeService) { 
-    this.curDate = new Date();
+    // this.curDate = new Date();
   }
 
   ngOnInit(): void {
     this.leaveStatus();
     this.loadData();
     this.leave.empId = this.employee.idAfterLoggedIn;
-    this.leave.dateOfApplication = this.curDate;
+    this.leave.dateOfApplication = new Date();
    // this.leave.managerId = this.emp.managerId;
   }
 
@@ -97,13 +98,20 @@ export class ApplyForLeaveComponent implements OnInit {
   loadData() {
     console.log(this.employee.idAfterLoggedIn);
     console.log("inside load data")
-  //  console.log(this.empId);
-    return this.employee.getEmployee(this.employee.idAfterLoggedIn).subscribe((data:any) =>
+    this.employee.getEmployee(this.employee.idAfterLoggedIn).subscribe((data:any) =>
     {
       this.emp = data;
       console.log(this.emp.managerId);
       this.leave.managerId = this.emp.managerId;
     })
+    this.employee.getLeaveByEmpId().subscribe((data:Leave[])=>{
+      let max_l=0;
+      data.forEach(leav=>{
+        if(leav.utilized>max_l)
+          max_l=leav.utilized;
+      })
+      this.remainingLeaves=max_l;
+    });
   }
 
  }

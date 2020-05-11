@@ -16,13 +16,15 @@ export class AddEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
   form: any[];
   EmployeeForm: FormGroup;
-
+  curDate: Date;
   constructor(
     private admin: AdminService,
     private router: Router,
     private adminComp: AdminComponent,
     private toastr: ToastrService
-  ) {}
+  ) {
+    this.curDate = new Date();
+  }
 
   ngOnInit(): void {
     // this.EmployeeForm = new FormGroup({
@@ -32,19 +34,19 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   add() {
+   
     this.admin.addEmployee(this.employee).subscribe((data) => {
-      
+      this.toastr.success('Successfully Added','Record');
     });
     this.empdata.push(this.employee);
   
-    
   }
 
-  addToastr(){
-    this.toastr.success('Successfully Added','Record');
-    this.router.navigate(['/admin/show']);
+  // addToastr(){
+  //   this.toastr.success('Successfully Added','Record');
+  //   this.router.navigate(['/admin/show']);
     
-  }
+  // }
 
   
 }
