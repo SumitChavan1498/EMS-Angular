@@ -11,6 +11,8 @@ export class SearchemployeeComponent implements OnInit {
   selected: any;
   searchTerm: string;
   empdata:Employee[];
+  p: number = 1;
+
   constructor(private admin:AdminService) { }
 
   ngOnInit(): void {

@@ -1,0 +1,19 @@
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin-left: 450px;
+    margin-top: 15px;
+    color: black;
+}
+
+
+.paginate {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginate /deep/ .ngx-pagination .current {
+    background: #343a40;
+  }

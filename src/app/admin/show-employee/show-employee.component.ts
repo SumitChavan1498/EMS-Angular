@@ -19,6 +19,7 @@ export class ShowEmployeeComponent implements OnInit {
   //p: number = 1
   p: number = 1;
   searchTerm: string;
+  selected: any;
   //employees:  Employee[];
 
   constructor(

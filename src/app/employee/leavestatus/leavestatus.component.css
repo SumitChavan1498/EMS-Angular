@@ -1,0 +1,10 @@
+.paginate {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginate /deep/ .ngx-pagination .current {
+    background: #343a40;
+  }

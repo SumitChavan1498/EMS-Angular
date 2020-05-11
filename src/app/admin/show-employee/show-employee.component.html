@@ -9,8 +9,17 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>  
                 </div>
-                <input type="text" class="form-control" placeholder="Search by Name" [(ngModel)]="searchTerm">
+                <input type="text" class="form-control" placeholder="Search by ...." [(ngModel)]="searchTerm">
               </div>
+              <select id="Select1" [(ngModel)]="selected">
+                <option>Id</option>
+                <option>First Name</option>
+                <option>Last Name</option>
+                <option>Department</option>
+                <option>Grade</option>
+                <!-- <option>Address1</option>
+                <option>Address2</option> -->
+              </select>
 
         
 
@@ -33,7 +42,7 @@
         <th>Update</th>
         <th>Delete</th>
     </thead>
-    <tbody *ngFor=" let a of empdata | employeefilter:searchTerm | paginate: { itemsPerPage: 10, currentPage: p}">
+    <tbody *ngFor=" let a of empdata | employeefilter:searchTerm:selected | paginate: { itemsPerPage: 10, currentPage: p}">
         <tr>
             <td>{{a.empId}}</td>
             <td>{{a.fname}}</td>

@@ -38,5 +38,5 @@ thead {
 }
 
 .paginate /deep/ .ngx-pagination .current {
-    background:black;
+    background: #343a40;
   }

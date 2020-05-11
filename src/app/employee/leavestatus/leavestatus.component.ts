@@ -8,7 +8,7 @@ import { EmployeeService } from 'src/app/employee.service';
   styleUrls: ['./leavestatus.component.css']
 })
 export class LeavestatusComponent implements OnInit {
-  
+  p: number = 1;
   leaveData: Leave[];
   myLeaves:Leave[];
   constructor(private employee: EmployeeService) { }

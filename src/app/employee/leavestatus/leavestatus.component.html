@@ -1,14 +1,15 @@
-<div>
-    <button class="btn btn-light" (click)='leaveStatus()'>Show Applied Leaves</button>
+<!-- <div>
+    <button class="btn btn-primary" (click)='leaveStatus()'>Show Leave Request</button>
 
 
-    <table class="table table-bordered table-striped table-danger table-head table-sm"> 
+    <table class="table table-bordered  table-primary table-head table"> 
     <thead> 
         <td>Emp ID</td> 
         <td>Date of Application</td>
         <td>Date of Leave </td>
         <td>Number of Days</td>  
         <td>Status</td> 
+        <td>Response</td>
         
         
 
@@ -21,14 +22,75 @@
             <td>{{a.numberOfDays}}</td>  
             <td>{{a.status}}</td> 
             
-            <td><a (click)='approved(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td>
-            <td><a (click)='reject(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td>
+            <td>  <div class="btn-group" role="group" aria-label="Basic example">
+                <button (click)='approved(a)' type="button" class="btn btn-secondary">Approve</button>
+                <button (click)='reject(a)' type="button" class="btn btn-secondary">Reject</button>
+                
+              </div>
+            </td>
+            
            
          </tr> 
     </tbody>
 </table>
 
-<h2>MyLeaves</h2>
+</div> -->
+
+
+<div class="appliedleaves">
+<p>
+<button class="btn btn-primary" type="button" (click)='leaveStatus()' data-toggle="collapse" data-target="#collapse1">
+   Show Leave Request
+  </button>
+</p>
+<div class="collapse" id="collapse1">
+   
+  <div class="card card-body">
+    <div>
+        <!-- <button class="btn btn-primary" (click)='leaveStatus()'>Show Leave Request</button> -->
+        <h6 class="card-subtitle mb-2 text-muted">Only Manager can see Requests</h6>
+    
+        <table class="table table-success "> 
+        <thead class="thead-dark"> 
+            <td>Emp ID</td> 
+            <td>Date of Application</td>
+            <td>Date of Leave </td>
+            <td>Number of Days</td>  
+            <td>Status</td> 
+            <td>Response</td>
+            
+            
+    
+        </thead>
+        <tbody *ngFor=" let a of leaveData  |  paginate: { itemsPerPage: 4, currentPage: p}">
+            <tr>
+                <td>{{a.empId}}</td>
+                <td>{{a.dateOfApplication}}</td>
+                <td>{{a.dateOfLeave}}</td>
+                <td>{{a.numberOfDays}}</td>  
+                <td>{{a.status}}</td> 
+                
+                <td>  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button (click)='approved(a)' type="button" class="btn btn-success">Approve</button>
+                    <button (click)='reject(a)' type="button" class="btn btn-danger">  Reject</button>
+                    
+                  </div>
+                </td>
+                
+               
+             </tr> 
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event" class="paginate"></pagination-controls>
+    
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- <div class="myleaves">
+    
 <table class="table table-bordered table-striped table-danger table-head table-sm"> 
     <thead> 
         <td>Emp ID</td> 
@@ -40,7 +102,7 @@
         
 
     </thead>
-    <tbody *ngFor=" let a of myLeaves">
+    <tbody *ngFor=" let a of myLeaves |  paginate: { itemsPerPage: 5, currentPage: p}">
         <tr>
             <td>{{a.empId}}</td>
             <td>{{a.dateOfApplication}}</td>
@@ -48,12 +110,57 @@
             <td>{{a.numberOfDays}}</td>  
             <td>{{a.status}}</td> 
             
-            <!-- <td><a (click)='updateButtonClicked(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td> -->
-            <!-- <td><a (click)='delete(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td> -->
+          
            
          </tr> 
     </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event" class="paginate"></pagination-controls>
+
+  
+</div> -->
 
 
+
+
+<div class="showleaves">
+<p>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2" >
+   show Leaves
+  </button>
+</p>
+<div class="collapse" id="collapse2">
+  <div class="card card-body">
+    <div class="myleaves">
+    
+        <table class="table table-success "> 
+            <thead class="thead-dark"> 
+                <td>Emp ID</td> 
+                <td>Date of Application</td>
+                <td>Date of Leave </td>
+                <td>Number of Days</td>  
+                <td>Status</td> 
+                
+                
+        
+            </thead>
+            <tbody *ngFor=" let a of myLeaves |  paginate: { itemsPerPage: 4, currentPage: p}">
+                <tr>
+                    <td>{{a.empId}}</td>
+                    <td>{{a.dateOfApplication}}</td>
+                    <td>{{a.dateOfLeave}}</td>
+                    <td>{{a.numberOfDays}}</td>  
+                    <td>{{a.status}}</td> 
+                    
+                    <!-- <td><a (click)='updateButtonClicked(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td> -->
+                    <!-- <td><a (click)='delete(a)' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td> -->
+                   
+                 </tr> 
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" class="paginate"></pagination-controls>
+        
+          </div>
   </div>
+</div>
+</div>

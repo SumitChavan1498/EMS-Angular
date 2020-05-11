@@ -16,13 +16,17 @@ export class ApplyForLeaveComponent implements OnInit {
   leave: Leave = new Leave();
   emp: Employee = new Employee();
   max_val;
-
-  constructor(private employee: EmployeeService) { }
+  curDate: Date;
+  
+  constructor(private employee: EmployeeService) { 
+    this.curDate = new Date();
+  }
 
   ngOnInit(): void {
     this.leaveStatus();
     this.loadData();
     this.leave.empId = this.employee.idAfterLoggedIn;
+    this.leave.dateOfApplication = this.curDate;
    // this.leave.managerId = this.emp.managerId;
   }
 

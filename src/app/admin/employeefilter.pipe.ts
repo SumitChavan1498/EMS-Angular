@@ -7,14 +7,29 @@ import { Employee } from '../employee';
 })
 export class EmployeeFilterPipe implements PipeTransform {
     
-    transform(empdata: Employee[], searchTerm: string): Employee[] {
+    transform(empdata: Employee[], searchTerm: string, selected: string): Employee[] {
         if (!empdata || !searchTerm) {
             return empdata;
         }
         
-            return empdata.filter(empdata =>
-                empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
-       
+            // return empdata.filter(empdata =>
+            //     empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+            else if( selected=="First Name") {
+                return empdata.filter(empdata =>
+                  empdata.fname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+              }
+              else if(selected=="Last Name") {
+                return empdata.filter(empdata =>
+                  empdata.lname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+              }
+              else if(selected=="Department") {
+                return empdata.filter(empdata =>
+                  empdata.department.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+              }
+              else if(selected=="Grade") {
+                return empdata.filter(empdata =>
+                  empdata.grade.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+              }
            
     }
 }
