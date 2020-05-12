@@ -18,6 +18,7 @@ export class UpdateComponent implements OnInit {
   form: any[];
   EmployeeForm: FormGroup;
   
+  
   constructor(
     private admin: AdminService,
     private adminComp: AdminComponent,
@@ -48,6 +49,8 @@ export class UpdateComponent implements OnInit {
     this.employee = this.adminComp.employee;
    
   }
+
+  
 
   updateToastr() {
     this.toastr.success("Successfully Updated", "1 Record");

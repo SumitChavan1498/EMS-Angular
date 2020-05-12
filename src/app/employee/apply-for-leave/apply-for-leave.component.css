@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    /* justify-content: left; */
+}
+
+
+.child1{
+    justify-content: left;
+    margin-top: 5px;
+}
+
+.child2{
+    margin-left: 500px;
+    justify-content: right;
+}

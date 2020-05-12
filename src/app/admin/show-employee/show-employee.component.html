@@ -16,19 +16,9 @@
                     <option>Last Name</option>
                     <option>Department</option>
                     <option>Grade</option>
-                    <!-- <option>Address1</option>
-                    <option>Address2</option> -->
                   </select>  
             </div>
-              <!-- <select id="Select1" [(ngModel)]="selected">
-                <option>Id</option>
-                <option>First Name</option>
-                <option>Last Name</option>
-                <option>Department</option>
-                <option>Grade</option> -->
-                <!-- <option>Address1</option>
-                <option>Address2</option> -->
-              <!-- </select> -->
+             
 
         
 
@@ -43,10 +33,10 @@
         <th>Grade</th>  
         <th>Designation</th>
         <th>Gender</th>
-        <th>Basic Salary</th>
-        <th>Marital Status</th>
-        <th>Address</th>
-        <!-- <td>Contact Number</td> -->
+        <!-- <th>Basic Salary</th> -->
+        <!-- <th>Marital Status</th> -->
+        <!-- <th>Address</th> -->
+       
         <th>Manage ID</th>
         <th>Update</th>
         <th>Delete</th>
@@ -62,10 +52,9 @@
             <td>{{a.grade}}</td>
             <td>{{a.designation}}</td>
             <td>{{a.gender}}</td> 
-            <td>{{a.salary}}</td>
+            <!-- <td>{{a.salary}}</td>
             <td>{{a.maritalStatus}}</td>
-            <td>{{a.address}}</td>
-            <!-- <td>{{a.contact}}</td> -->
+            <td>{{a.address}}</td> -->
             <td>{{a.managerId}}</td>
             <td><a (click)='updateButtonClicked(a)' data-toggle="tooltip" data-placement="bottom" title="Update Record"><i class="fas fa-edit"></i></a></td>
             <td><a (click)='delete(a);deleteToastr()' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></td>

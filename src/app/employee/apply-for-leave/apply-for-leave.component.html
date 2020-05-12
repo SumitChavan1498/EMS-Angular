@@ -1,9 +1,12 @@
 
 
-<body>
-<div class="row">
-  <div class="col">
-<div class="card" style="width: 18rem;">
+<div class="container">
+
+<!-- <div class="row">
+  <div class="col"> -->
+
+
+<div class="card child1" style="width: 18rem;">
     
     <div class="card-body">
       <h5 class="card-title">Apply For Leave</h5>
@@ -16,7 +19,7 @@
         </div>
         <div class="form-group">
           <label for="dateOfApplication">Date of Application</label>
-          <a  value="YYYY-MM-DD"  disabled="disabled" [(ngModel)]='leave.dateOfApplication' required format="YYYY-MM-DD" [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfApplication" placeholder="Enter date of Application">{{leave.dateOfApplication | date:"dd-MM-y"}}</a>
+          <a  value="YYYY-MM-DD"  disabled="disabled" [(ngModel)]='leave.dateOfApplication' required format="YYYY-MM-DD" [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfApplication" placeholder="Enter date of Application">{{leave.dateOfApplication | date:"dd-MM-yyyy "}}</a>
         </div>
         
         <div class="form-group">
@@ -26,7 +29,13 @@
 
           <div class="form-group">
             <label for="numberOfDays">Number of Days <span class="badge badge-primary" style="margin-left: 9px;">Balance Leave:{{12-remainingLeaves}} </span></label>
-            <input type="number"  [(ngModel)]='leave.numberOfDays' [ngModelOptions]="{standalone: true}" class="form-control" id="numberOfDays" placeholder="Enter Number of Days">
+            <input type="number"  [(ngModel)]='leave.numberOfDays'  [ngModelOptions]="{standalone: true}" class="form-control" id="numberOfDays" placeholder="Enter Number of Days">
+            <!-- <span *ngIf='!numberOfDays.valid && numberOfDays.dirty && numberOfDays.touched'>
+              <p style="color: #f40552">Enter valid number of days</p>
+            </span>
+              <span *ngIf='!numberOfDays.valid && numberOfDays.touched && numberOfDays.pristine' >
+                <p style="color: #f40552">This is a required field</p>
+            </span> -->
           </div>
 
           <div class="form-group">
@@ -43,19 +52,19 @@
      
     </div>
     </div>
-  </div>
 
+  <!-- </div> -->
+ 
 
-
-  <div class="col">
-  <div class="card text-black bg-warning mb-3" style="max-width: 10rem; max-height: 10rem; margin-top: 50px;  float: right;">
+<!-- <div class="col"> -->
+  <div class="card child2 text-black bg-warning mb-3" style="max-width: 10rem; max-height: 10rem; margin-top: 50px; ">
    
     <div class="card-body">
       <h5 class="card-title" style="font-size:40px; text-align: center;">{{remainingLeaves}}</h5>
       <p class="card-text" style="text-align: center;">Days of Leave Utilized</p>
     </div>
-  </div>
-</div>
-</div>
+  </div> 
+<!-- </div>
+</div> -->
 
-</body>
+</div>

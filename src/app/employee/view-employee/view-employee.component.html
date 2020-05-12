@@ -9,12 +9,13 @@
   </div>
   <div class="middle">
     <div class="avatar"><i class="material-icons" style="font-size: 100px; color: rgba(255,255,255,0.7)">&#xe853;</i></div>
-    <h4 class="name">{{employee.fname}}</h4>
-    <h4 class="work">{{employee.empId}}</h4>
-    <h4 class="social"> {{employee.gender}} &nbsp;&nbsp;|&nbsp;&nbsp; {{employee.grade}} &nbsp;&nbsp;|&nbsp;&nbsp;{{employee.maritalStatus}}</h4>
+    <h4 class="name">{{employee.fname}}  {{employee.lname}}</h4>
+    <h4 class="work"><a data-toggle="tooltip" data-placement="right" title="Employee ID">#{{employee.empId}}</a></h4>
+    <h4 class="social"> {{employee.gender}} &nbsp;&nbsp;|&nbsp;&nbsp;<a data-toggle="tooltip" data-placement="right" title="Grade">{{employee.grade}} </a> &nbsp;&nbsp;|&nbsp;&nbsp;{{employee.maritalStatus}}</h4>
   </div>
   <div class="footer">
-   <button class="btn-follow">{{employee.designation}}</button><br/>
+   <a class="btn-follow">{{employee.designation}}</a><br/>
+
    <div class="row">
     <div class="col">
       Date of Joining:
@@ -49,17 +50,12 @@
     <div class="col">
       {{employee.managerId}}
     </div>
+
    </div>
-   <!-- <ul>
-      <li>Date of Joining: {{employee.doj}}</li>
-      <li>Date of Birth: {{employee.dob}} </li>
-      <li>Department: {{employee.department}}</li>
-      <li>Grade: {{employee.grade}} </li>
-      <li>Manager Id: {{employee.managerId}} </li>
-    </ul> -->
-    <!-- <i class="fa fa-lock"></i>
-    <br/> -->
-    <!-- <h4 class="profile-status">This profile is hidden</h4> -->
+ 
+
+
+
   </div>
 </div>
 

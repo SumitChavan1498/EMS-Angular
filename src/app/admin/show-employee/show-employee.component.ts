@@ -21,6 +21,7 @@ export class ShowEmployeeComponent implements OnInit {
   searchTerm: string;
   selected: any;
   //employees:  Employee[];
+  // empList: Employee[];
 
   constructor(
     private admin: AdminService,
@@ -70,6 +71,13 @@ export class ShowEmployeeComponent implements OnInit {
   deleteToastr() {
     this.toastr.info("Successfully Deleted", "1 Record");
   }
+
+  // sortbyId() {
+  //   this.empList.sort((a,b) =>
+  //   a.empId > b.empId ? 1 : a.empId < b.empId ? -1 : 0 
+  //   );
+  //   return this.empList;
+  // }
 
  
 }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdminLogin } from '../AdminLogin';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class MainComponent implements OnInit {
   employee: Employee = new Employee();
   id:string;
   pass:string;
+  eyeicon:string;
 
   empFound = false;
   adminFound = false;
@@ -26,8 +28,9 @@ export class MainComponent implements OnInit {
   show: boolean;
 
 
-  constructor(private adminservice:AdminService,private router:Router,private employeeservice: EmployeeService) {
+  constructor(private adminservice:AdminService,private router:Router,private employeeservice: EmployeeService, private toastr:ToastrService) {
     this.show = false;
+    this.eyeicon = "fa-eye-slash";
    }
 
   ngOnInit(): void {
@@ -36,7 +39,12 @@ export class MainComponent implements OnInit {
   }
 
   password() {
+
     this.show = !this.show;
+    if(this.show)
+    this.eyeicon = "fa-eye";
+    else
+    this.eyeicon = "fa-eye-slash";
   }
 
   loadAdminCredential(){
@@ -57,13 +65,15 @@ export class MainComponent implements OnInit {
       if(cred.adminId==this.id){
         if(cred.adminPass==this.pass){
           this.adminFound = true;
-
+          this.toastr.success('Logged in as Admin','Successfully',{positionClass: 'toast-bottom-right'});
           this.router.navigate(['/admin/show']);
         }
       }
     });
     if(!this.adminFound)
-      alert("Enter valid Credential");
+      // alert("Enter valid Credential");
+      this.toastr.error('Please Enter Valid Credential Ones','Invalid Credentials!',{positionClass: 'toast-bottom-right'});
+        
   }
 
   employeeLogin(){
@@ -74,13 +84,14 @@ export class MainComponent implements OnInit {
           this.empFound = true;
           this.employeeservice.idAfterLoggedIn=cred.empId;
           this.employeeservice.managerIdafterLoggedIn=cred.managerId;
+          this.toastr.success('Logged in as Employee','Successfully',{positionClass: 'toast-bottom-right'});
           this.router.navigate(['/employee/view']);
         }
       }
     });
     if(!this.empFound)
-       alert("Enter valid Credential");
-     
+      //  alert("Enter valid Credential");
+      this.toastr.error('Please Enter Valid Ones','Invalid Credentials!',{positionClass: 'toast-bottom-right'});
   }
 
  

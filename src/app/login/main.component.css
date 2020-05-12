@@ -24,13 +24,20 @@ body {
     color: white;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
 
 
 .card {
     margin-top: 3rem;
-    margin-left: 450px;
+    /* margin-left: 450px; */
+    
     margin-bottom: auto;
 }
+
+
 
 
 .btn-label { 

@@ -4,6 +4,7 @@ import { EmployeeService } from 'src/app/employee.service';
 import { MainComponent } from 'src/app/login/main.component';
 import { AddEmployeeComponent } from 'src/app/admin/add-employee/add-employee.component';
 import { Employee } from 'src/app/employee';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-apply-for-leave',
@@ -19,7 +20,7 @@ export class ApplyForLeaveComponent implements OnInit {
   // curDate: Date;
   remainingLeaves:number;
   
-  constructor(private employee: EmployeeService) { 
+  constructor(private employee: EmployeeService,private toastr: ToastrService) { 
     // this.curDate = new Date();
   }
 
@@ -40,7 +41,7 @@ export class ApplyForLeaveComponent implements OnInit {
 
     this.employee.getLeaveByEmpId().subscribe((data:Leave[]) =>
     {
-      console.log("inside kahi tari");
+      
       console.log(data);
       if(!data==undefined||data.length>0){
         this.max_val=0;
@@ -59,15 +60,18 @@ export class ApplyForLeaveComponent implements OnInit {
         this.employee.applyLeave(this.leave).subscribe(data => {
 
           if(data!=null)
-            alert("Applied for leave!");
+            // alert("Applied for leave!");
+            this.toastr.success('for Leave Successfully ','Applied!',{positionClass: 'toast-bottom-right'});
           else
-            alert("No more leaves!!!");
+            // alert("No more leaves!!!");
+            this.toastr.error('You have used all your Leaves','No More Leaves!',{positionClass: 'toast-bottom-right'});
         });
         this.leaveData.push(this.leave);
         this.leave.status="Applied";
       }
       else{
-        alert("already applied please wait for response");
+        // alert("already applied please wait for response");
+        this.toastr.warning('Please Wait for response ','Already applied for a Leave',{positionClass: 'toast-bottom-right'});
       }
     })
   })
