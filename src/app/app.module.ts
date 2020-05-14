@@ -31,6 +31,7 @@ import { ErrorComponent } from './error/error.component';
 import { EmployeeFilterPipe } from './admin/employeefilter.pipe';
 import { SearchemployeeComponent } from './employee/searchemployee/searchemployee.component';
 import { EmpFilterPipe } from './employee/empfilter.pipe';
+// import { BootstrapAlertModule } from 'ngx-bootstrap-alert';
 
 
 
@@ -70,6 +71,7 @@ import { EmpFilterPipe } from './employee/empfilter.pipe';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    //BootstrapAlertModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,
@@ -77,6 +79,7 @@ import { EmpFilterPipe } from './employee/empfilter.pipe';
       preventDuplicates: true
   
     })
+    
  
   ],
   providers: [AdminService,EmployeeService],

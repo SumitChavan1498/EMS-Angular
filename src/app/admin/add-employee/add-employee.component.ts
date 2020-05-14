@@ -17,6 +17,7 @@ export class AddEmployeeComponent implements OnInit {
   form: any[];
   EmployeeForm: FormGroup;
   curDate: Date;
+  age:number;
   constructor(
     private admin: AdminService,
     private router: Router,
@@ -30,15 +31,25 @@ export class AddEmployeeComponent implements OnInit {
     // this.EmployeeForm = new FormGroup({
     //   fname: new FormControl()
     // });
-    '<h1>Hello</h1>';
+    
   }
 
   add() {
-   
-    this.admin.addEmployee(this.employee).subscribe((data) => {
-      this.toastr.success('Successfully Added','Record');
-    });
-    this.empdata.push(this.employee);
+
+    var timeDiff = Math.abs(new Date(this.employee.doj).getTime() - new Date(this.employee.dob).getTime());
+    this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
+
+    //if((this.employee.dob > this.employee.doj) && (this.dat-18) > this.employee.dob.getFullYear()) 
+  if(this.age<=18){
+    this.toastr.warning('should be less than Date of Joining','Date of Birth')
+    }
+    else{
+      this.admin.addEmployee(this.employee).subscribe((data) => {
+        this.toastr.success('Successfully Added','Record');
+      });
+      this.empdata.push(this.employee);
+    }
+    
   
   }
 

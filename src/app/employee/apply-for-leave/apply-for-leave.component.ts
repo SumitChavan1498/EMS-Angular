@@ -39,6 +39,15 @@ export class ApplyForLeaveComponent implements OnInit {
     // this.leaveData.push(this.leave);
     // this.leave.status="Applied";
 
+      if(this.leave.numberOfDays<=0 || this.leave.numberOfDays> 12 )  {
+          this.toastr.error('Number of Days','Enter Valid');
+      }
+      else if(this.leave.numberOfDays== null || this.leave.dateOfLeave== null) {
+        this.toastr.error('are Mandatory','All fields');
+      }
+      else {
+        
+
     this.employee.getLeaveByEmpId().subscribe((data:Leave[]) =>
     {
       
@@ -75,6 +84,8 @@ export class ApplyForLeaveComponent implements OnInit {
       }
     })
   })
+
+}
 }
 
   leaveStatus() {

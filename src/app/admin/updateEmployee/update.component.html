@@ -3,30 +3,52 @@
 
 <div class="card" style="width: 75rem;">
     <div class="card-header">
-      Update Employee
+     <strong> UPDATE EMPLOYEE  </strong> 
     </div>
     <div class="card-body">
       
-      <form>
+      <form #updateForm="ngForm" (submit)='update(employee)'> 
         
+        <div class="row">
+          <div class="col">
         <div class="form-group">
           <label>Employee ID</label>
-          <input type="number" [(ngModel)]='employee.empId' [ngModelOptions]="{standalone: true}" placeholder="Enter Employee Id" class="form-control .form-control-sm" id="empId">
+          <input type="text"  pattern="[1-9][0-9]+" #empId="ngModel" minlength="6" maxlength="6" required [(ngModel)]='employee.empId' [ngModelOptions]="{standalone: true}" placeholder="Enter Employee Id" class="form-control .form-control-sm" id="empId">
+          <span *ngIf='!empId.valid && empId.dirty && !empId.touched'>
+            <p style="color: #f40552" >Enter a valid employee Id</p>
+          </span>
+            <span *ngIf='!empId.valid && empId.touched && empId.pristine' >
+              <p style="color: #f40552" >This is a required field</p>
+          </span>
         </div>
+      </div>
+
       
-      
-      <div class="row">
-      <div class="col">
+        <div class="col">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" [(ngModel)]='employee.fname' [ngModelOptions]="{standalone: true}" placeholder="Enter First Name" class="form-control .form-control-sm" id="firstname">
+          <input type="text" [(ngModel)]='employee.fname' #fname="ngModel" required pattern="^[A-Z][a-z]{2,}" [ngModelOptions]="{standalone: true}" placeholder="Enter First Name" class="form-control .form-control-sm" id="firstname">
+          <span *ngIf='!fname.valid && fname.dirty && fname.touched'>
+            <p style="color: #f40552">Enter a valid name</p>
+          </span>
+            <span *ngIf='!fname.valid && fname.touched && fname.pristine' >
+              <p style="color: #f40552">This is a required field</p>
+          </span>
+       
         </div>
       </div>
       
       <div class="col">
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" [(ngModel)]='employee.lname' [ngModelOptions]="{standalone: true}" placeholder="Enter Last Name" class="form-control .form-control-sm" id="lastname">
+          <input type="text" [(ngModel)]='employee.lname' #lname ="ngModel" pattern="^[A-Z][a-z]{2,}" required [ngModelOptions]="{standalone: true}" placeholder="Enter Last Name" class="form-control .form-control-sm" id="lastname">
+          <span *ngIf='!lname.valid && lname.dirty && lname.touched'>
+            <p style="color: #f40552">Enter a valid name</p>
+          </span>
+            <span *ngIf='!lname.valid && lname.touched && lname.pristine' >
+              <p style="color: #f40552">This is a required field</p>
+          </span>
+       
         </div>
       </div>
       </div>
@@ -36,24 +58,35 @@
         <div class="col">
         <div class="form-group">
           <label>Date of Joining</label>
-          <input type="date" format="yyyy-MM-dd" [(ngModel)]='employee.doj' [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Joining" class="form-control .form-control-sm" id="doj">
+          <input type="date" format="yyyy-MM-dd" [(ngModel)]='employee.doj' #doj="ngModel" required [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Joining" class="form-control .form-control-sm" id="doj">
+          <span *ngIf='!doj.valid && doj.pristine && doj.touched' > 
+            <p style="color: #f40552">This is a required field</p>
+          </span>
         </div>
         </div>
       
         <div class="col">
         <div class="form-group">
           <label>Date of Birth</label>
-          <input type="date" format="yyyy-MM-dd" [(ngModel)]='employee.dob' [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Birth" class="form-control .form-control-sm" id="dob">
+          <input type="date" format="yyyy-MM-dd" [(ngModel)]='employee.dob' required #dob="ngModel" [ngModelOptions]="{standalone: true}" placeholder="Enter Date of Birth" class="form-control .form-control-sm" id="dob">
+       
+          <span *ngIf='!dob.valid && dob.pristine && dob.touched'>
+            <p style="color: #f40552">This is a required field</p>
+          </span>
         </div>
       </div>
-      </div>
+      
   
   
-      <div class="row">
+      
         <div class="col">
         <div class="form-group">
           <label>Department</label>
-          <input type="text" [(ngModel)]='employee.department' [ngModelOptions]="{standalone: true}" placeholder="Enter Department" class="form-control .form-control-sm" id="dept">
+          <input type="text" [(ngModel)]='employee.department'  #department="ngModel" required [ngModelOptions]="{standalone: true}" placeholder="Enter Department" class="form-control .form-control-sm" id="dept">
+          <span *ngIf='!department.valid && department.touched && department.pristine' >
+            <p style="color: #f40552">This is a required field</p>
+        </span>
+      
         </div>
         </div>
       
@@ -61,7 +94,7 @@
         <div class="col">
         <div class="form-group">
           <label>Grade</label>
-          <select type="text" [(ngModel)]='employee.grade' [ngModelOptions]="{standalone: true}"  placeholder="Enter Grade" class="form-control" id="grade">
+          <select type="text" [(ngModel)]='employee.grade'  [ngModelOptions]="{standalone: true}" #grade="ngModel" required  placeholder="Enter Grade" class="form-control" id="grade">
             <option>M1</option>
             <option>M2</option>
             <option>M3</option>
@@ -70,59 +103,75 @@
             <option>M6</option>
             <option>M7</option>
           </select>
-  
+          <span *ngIf='!grade.valid && grade.touched && grade.pristine' >
+            <p style="color: #f40552">This is a required field</p>
+        </span>
          
           <!-- <input type="text" [(ngModel)]='employee.grade' placeholder="Enter Grade" class="form-control" id="grade"> --> 
         </div>
       </div>
       </div>
+
         
       <div class="row">
         <div class="col">
         <div class="form-group">
           <label>Designation</label>
-          <input type="text" [(ngModel)]='employee.designation' [ngModelOptions]="{standalone: true}" placeholder="Enter Designation" class="form-control .form-control-sm" id="designation">
+          <input type="text" #designation="ngModel" pattern="[A-z]+" [(ngModel)]='employee.designation' [ngModelOptions]="{standalone: true}" placeholder="Enter Designation" class="form-control .form-control-sm" id="designation">
+          <span *ngIf='!designation.valid && designation.dirty && designation.touched'>
+            <p style="color: #f40552">Enter a valid designation</p>
+          </span>
         </div>
         </div>
       
         <div class="col">
         <div class="form-group">
           <label>Gender</label>
-          <select type="text" [(ngModel)]='employee.gender' [ngModelOptions]="{standalone: true}" placeholder="Enter Gender" class="form-control" id="gender">
+          <select type="text" [(ngModel)]='employee.gender'  [ngModelOptions]="{standalone: true}" #gender="ngModel" required placeholder="Enter Gender" class="form-control" id="gender">
             <option>Male</option>
             <option>Female</option>
           </select>
-  
+          <span *ngIf='!gender.valid && gender.touched && gender.pristine' >
+            <p style="color: #f40552">This is a required field</p>
+        </span>
+           
              <!-- <input type="text" [(ngModel)]='employee.gender' placeholder="Enter Gender" class="form-control .form-control-sm" id="gender"> --> 
          </div>
       </div>
+      
+      
+      
+        <div class="col">
+        <div class="form-group">
+          <label>Basic Salary</label>
+          <input type="number" [(ngModel)]='employee.salary' #salary="ngModel" [ngModelOptions]="{standalone: true}" placeholder="Enter Salary" class="form-control .form-control-sm" id="salary">
+          <span *ngIf='!salary.valid && salary.dirty && salary.touched'>
+            <p style="color: red">Enter a valid salary</p>
+          </span>
+        </div>
+        </div>
       </div>
       
       <div class="row">
         <div class="col">
         <div class="form-group">
-          <label>Basic Salary</label>
-          <input type="number" [(ngModel)]='employee.salary' [ngModelOptions]="{standalone: true}" placeholder="Enter Salary" class="form-control .form-control-sm" id="salary">
-        </div>
-        </div>
-      
-        <div class="col">
-        <div class="form-group">
           <label>Marital Status</label>
-          <select type="text" [(ngModel)]='employee.maritalStatus' [ngModelOptions]="{standalone: true}" placeholder="Enter Marital Status" class="form-control" id="maritalStat">
+          <select type="text" [(ngModel)]='employee.maritalStatus' [ngModelOptions]="{standalone: true}" #maritalStatus="ngModel" required placeholder="Enter Marital Status" class="form-control" id="maritalStat">
             <option>Single</option>
             <option>Married</option>
             <option>Divorced</option>
             <option>Widowed</option>
           </select> 
-         
+          <span *ngIf='!maritalStatus.valid && maritalStatus.touched && maritalStatus.pristine' >
+            <p style="color: #f40552">This is a required field</p>
+        </span>
           <!-- <input type="text" [(ngModel)]='employee.maritalStatus' placeholder="Enter Marital Status" class="form-control .form-control-sm" id="maritalStat"> -->
          </div>
       </div>
-      </div>
+      
   
   
-      <div class="row">
+     
         <div class="col">
         <div class="form-group">
           <label>Address</label>
@@ -134,12 +183,18 @@
       <div class="col">
         <div class="form-group">
           <label>Manager ID</label>
-          <input type="number" [(ngModel)]='employee.managerId' [ngModelOptions]="{standalone: true}" placeholder="Enter Manager Id" class="form-control .form-control-sm" id="managerId">
+          <input type="number" [(ngModel)]='employee.managerId' [ngModelOptions]="{standalone: true}"  #managerId="ngModel" required minlength="6" maxlength="6" pattern="[1-9][0-9]+" placeholder="Enter Manager Id" class="form-control .form-control-sm" id="managerId">
+          <span *ngIf='!managerId.valid && managerId.dirty && managerId.touched'>
+            <p style="color: #f40552" >Enter a valid Manager Id</p>
+          </span>
+            <span *ngIf='!managerId.valid && managerId.touched && managerId.pristine' >
+              <p style="color: #f40552" >This is a required field</p>
+          </span>
         </div>
       </div>
       </div>
       
-         <button (click)='update(employee);updateToastr()' type="submit" class="btn btn-primary btn-block">Update</button> 
+         <button type="submit"  [disabled]='!updateForm.valid'  class="btn btn-primary btn-block">Update</button> 
         
       </form>
     </div>

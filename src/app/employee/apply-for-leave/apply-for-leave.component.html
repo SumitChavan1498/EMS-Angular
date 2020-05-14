@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
           <label for="dateOfApplication">Date of Application</label>
-          <a  value="YYYY-MM-DD"  disabled="disabled" [(ngModel)]='leave.dateOfApplication' required format="YYYY-MM-DD" [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfApplication" placeholder="Enter date of Application">{{leave.dateOfApplication | date:"dd-MM-yyyy "}}</a>
+          <a  value="YYYY-MM-DD"  disabled="disabled" [(ngModel)]='leave.dateOfApplication' required format="YYYY-MM-DD" [ngModelOptions]="{standalone: true}" class="form-control" id="dateOfApplication" placeholder="Enter date of Application">{{leave.dateOfApplication | date:"dd-MM-yyyy"}}</a>
         </div>
         
         <div class="form-group">
@@ -29,7 +29,7 @@
 
           <div class="form-group">
             <label for="numberOfDays">Number of Days <span class="badge badge-primary" style="margin-left: 9px;">Balance Leave:{{12-remainingLeaves}} </span></label>
-            <input type="number"  [(ngModel)]='leave.numberOfDays'  [ngModelOptions]="{standalone: true}" class="form-control" id="numberOfDays" placeholder="Enter Number of Days">
+            <input type="number"  [(ngModel)]='leave.numberOfDays'  [ngModelOptions]="{standalone: true}" class="form-control" id="numberOfDays" placeholder="Enter Number of Days">  
             <!-- <span *ngIf='!numberOfDays.valid && numberOfDays.dirty && numberOfDays.touched'>
               <p style="color: #f40552">Enter valid number of days</p>
             </span>

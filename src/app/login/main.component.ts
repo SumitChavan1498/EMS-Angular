@@ -65,6 +65,7 @@ export class MainComponent implements OnInit {
       if(cred.adminId==this.id){
         if(cred.adminPass==this.pass){
           this.adminFound = true;
+          sessionStorage.setItem("role","admin");
           this.toastr.success('Logged in as Admin','Successfully',{positionClass: 'toast-bottom-right'});
           this.router.navigate(['/admin/show']);
         }
@@ -72,7 +73,7 @@ export class MainComponent implements OnInit {
     });
     if(!this.adminFound)
       // alert("Enter valid Credential");
-      this.toastr.error('Please Enter Valid Credential Ones','Invalid Credentials!',{positionClass: 'toast-bottom-right'});
+      this.toastr.error('Please Enter Valid Ones','Invalid Credentials!',{positionClass: 'toast-bottom-right'});
         
   }
 
@@ -84,6 +85,7 @@ export class MainComponent implements OnInit {
           this.empFound = true;
           this.employeeservice.idAfterLoggedIn=cred.empId;
           this.employeeservice.managerIdafterLoggedIn=cred.managerId;
+          sessionStorage.setItem("role","emp");
           this.toastr.success('Logged in as Employee','Successfully',{positionClass: 'toast-bottom-right'});
           this.router.navigate(['/employee/view']);
         }

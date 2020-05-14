@@ -26,7 +26,9 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     this.loadData();
     this.search(this.employeeId);
-   
+   if(sessionStorage.getItem("role")!="admin"){
+     this.router.navigate(["/login"])
+   }
 
   } 
 
@@ -68,6 +70,7 @@ export class AdminComponent implements OnInit {
  }
 
   logout(){
+    sessionStorage.removeItem("role");
     this.router.navigate(['/login']);
   }
 

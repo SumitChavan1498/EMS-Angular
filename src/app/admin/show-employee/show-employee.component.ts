@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 import { AdminComponent } from "../admin.component";
 import { Observable } from "rxjs";
 import { ToastrService } from "ngx-toastr";
+// import { BootstrapAlert, BootstrapAlertService } from 'ngx-bootstrap-alert';
+
 
 @Component({
   selector: "app-show-employee",
@@ -27,7 +29,8 @@ export class ShowEmployeeComponent implements OnInit {
     private admin: AdminService,
     private adminComp: AdminComponent,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    // private bootstrapAlertService: BootstrapAlertService
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +51,7 @@ export class ShowEmployeeComponent implements OnInit {
   }
 
   delete(a: Employee) {
+    this.toastr.info("Successfully Deleted", "1 Record");
     return this.admin.delete(a.empId).subscribe((data: any) => {
       this.empdata = data;
     });
@@ -69,7 +73,7 @@ export class ShowEmployeeComponent implements OnInit {
     this.empdata.push(this.searchedEmployee);
   }
   deleteToastr() {
-    this.toastr.info("Successfully Deleted", "1 Record");
+    // this.bootstrapAlertService.alert(new BootstrapAlert("BootstrapAlert Message!", "alert-success"));
   }
 
   // sortbyId() {
@@ -78,6 +82,9 @@ export class ShowEmployeeComponent implements OnInit {
   //   );
   //   return this.empList;
   // }
-
+ 
+  // alert() {
+  //   this.bootstrapAlertService.alert(new BootstrapAlert("BootstrapAlert Message!", "alert-success"));
+  // }
  
 }

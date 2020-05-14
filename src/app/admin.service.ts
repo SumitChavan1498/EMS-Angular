@@ -33,8 +33,8 @@ export class AdminService {
 
 
   GetEmployees(): Observable<Employee> {
-    return this.http.get<Employee>('http://localhost:1133/api/employee').pipe( retry(1), catchError(this.erroeHandl)
-    )
+    return this.http.get<Employee>('http://localhost:1133/api/employee');
+    
   }
 
   delete(empId: number) {
